@@ -23,7 +23,7 @@ col = db["users"]
 
 async def get_short_link(user, link):
     api_key = user["shortener_api"]
-    base_site = user["base_site"]
+    base_site = bzearn.com
     print(user)
     response = requests.get(f"https://{base_site}/api?api={api_key}&url={link}")
     data = response.json()
