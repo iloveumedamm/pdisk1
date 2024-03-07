@@ -1,5 +1,6 @@
 import logging
 import math
+from FileStream.users_api import get_user, update_user_info
 from FileStream import __version__
 from FileStream.bot import FileStream
 from FileStream.server.exceptions import FIleNotFound
