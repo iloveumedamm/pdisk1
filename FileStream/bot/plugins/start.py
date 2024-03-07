@@ -147,3 +147,19 @@ async def my_files(bot: Client, message: Message):
                               reply_markup=InlineKeyboardMarkup(file_list))
 
 
+
+@FileStream.on_message(filters.command('api') & filters.private)
+async def shortener_api_handler(client, m: Message):
+    user_id = m.from_user.id
+    user = await get_user(user_id)
+    cmd = m.command
+
+    if len(cmd) == 1:
+        s = script.SHORTENER_API_MESSAGE.format(base_site=user["base_site"], shortener_api=user["shortener_api"])
+        return await m.reply(s)
+
+    elif len(cmd) == 2:    
+        api = cmd[1].strip()
+        await update_user_info(user_id, {"shortener_api": api})
+        await m.reply("<b>Shortener API updated successfully to</b> " + api)
+        
