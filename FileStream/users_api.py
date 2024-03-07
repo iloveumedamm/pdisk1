@@ -7,13 +7,13 @@
 import requests
 import json
 from motor.motor_asyncio import AsyncIOMotorClient
-from config import DB_URI, DB_NAME
+from FileStream.config import DATABASE_URL, DB_NAME
 
 # Don't Remove Credit Tg - @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
 # Ask Doubt on telegram @KingVJ01
 
-client = AsyncIOMotorClient(DB_URI)
+client = AsyncIOMotorClient(DATABASE_URL)
 db = client[DB_NAME]
 col = db["users"]
 
