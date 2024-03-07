@@ -7,7 +7,8 @@
 import requests
 import json
 from motor.motor_asyncio import AsyncIOMotorClient
-from FileStream.config import DATABASE_URL, DB_NAME
+db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
+
 
 # Don't Remove Credit Tg - @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
